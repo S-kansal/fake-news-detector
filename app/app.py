@@ -1,10 +1,14 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
 
 # ---------------- Load Model ----------------
-model = pickle.load(open("../models/model.pkl", "rb"))
-vectorizer = pickle.load(open("../models/vectorizer.pkl", "rb"))
+MODEL_PATH = os.path.join("models", "model.pkl")
+VEC_PATH = os.path.join("models", "vectorizer.pkl")
+
+model = pickle.load(open(MODEL_PATH, "rb"))
+vectorizer = pickle.load(open(VEC_PATH, "rb"))
 
 # ------------------- Custom CSS -------------------
 st.markdown("""
